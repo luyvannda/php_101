@@ -7,40 +7,32 @@
           content="width=device-width, initial-scale=1.0">
     <title>Demo</title>
 
-    <style>
-      body {
-        display: grid;
-        place-items: center;
-        font-family: sans-serif;
-        height: 100vh;
-        margin: 0;
-      }
-    </style>
-
-
   </head>
 
   <body>
-
     <?php
 
-    $name = "Dark Matter";
-    $read = false;
-    $message = "";
+    $books = [
+      "Do Androids Dream of Electric Sheep",
+      "The Langoliers",
+      "Hail Mary",
+    ]
 
-    if ($read) {
-      $message = "You read '$name'";
-    } else {
-      $message = "You have Not read '$name'";
-    }
+      ?>
 
-    ?>
+    <h1>Recommended Books</h1>
 
-    <h1>
+    <ul>
 
-      <?= $message ?>
+      <?php foreach ($books as $book): ?>
 
-    </h1>
+        <li>
+          <?= "{$book}&trade;" ?>
+        </li>
+
+      <?php endforeach; ?>
+
+    </ul>
 
   </body>
 
