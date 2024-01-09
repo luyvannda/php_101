@@ -13,9 +13,23 @@
     <?php
 
     $books = [
-      "Do Androids Dream of Electric Sheep",
-      "The Langoliers",
-      "Hail Mary",
+      [
+        "title" => "Do Androids Dream of Electric Sheep",
+        "author" => "Joe Joe",
+        "purchaseUrl" => "www.example1.com",
+      ],
+
+      [
+        "title" => "The Langoliers",
+        "author" => "Mary Jane",
+        "purchaseUrl" => "www.example2.com",
+      ],
+
+      [
+        "title" => "Hail Mary",
+        "author" => "Peter Parker",
+        "purchaseUrl" => "www.example3.com",
+      ]
     ]
 
       ?>
@@ -27,7 +41,11 @@
       <?php foreach ($books as $book): ?>
 
         <li>
-          <?= "{$book}&trade;" ?>
+          <a href="<?= $book["purchaseUrl"] ?>">
+            <?= "{$book["title"]}&trade;" ?>
+          </a>
+          by
+          <?= $book["author"] ?>
         </li>
 
       <?php endforeach; ?>
