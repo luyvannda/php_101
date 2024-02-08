@@ -8,56 +8,60 @@
   </head>
 
   <body>
-    <?php
-      $books = [
-        [
-          'title' => 'Do Androids Dream of Electric Sheep',
-          'releasedYear' => 1968,
-          'author' => 'Philips K. Dick',
-          'purchaseUrl' => 'www.example1.com',
-        ],
-        [
-          'title' => 'The Langoliers',
-          'releasedYear' => 1990,
-          'author' => 'Stephen King',
-          'purchaseUrl' => 'www.example2.com',
-        ],
-        [
-          'title' => 'Project Hail Mary',
-          'releasedYear' => 2021,
-          'author' => 'Andy Weir',
-          'purchaseUrl' => 'www.example3.com',
-        ],
-        [
-          'title' => 'The Martian',
-          'releasedYear' => 2011,
-          'author' => 'Andy Weir',
-          'purchaseUrl' => 'www.example4.com',
-        ],
-      ];
 
-      function filterByAuthor($books, $author)
-      {
-        $filteredBooks = [];
+  <?php
 
-        foreach ($books as $book) {
-          if ($book['author'] === $author) {
-            $filteredBooks[] = $book;
-          }
+    $movies = [
+      [
+        'title' => 'The Art of War',
+        'releaseDate' => 2000
+      ],
+      [
+        'title' => 'Star Wars: Return of The Jedi',
+        'releaseDate' => 2010
+      ],
+      [
+        'title' => 'Battle Royale',
+        'releaseDate' => 2000
+      ],
+      [
+        'title' => 'The Avengers: End Game',
+        'releaseDate' => 2019
+      ],
+      [
+        'title' => 'Gone in 60 Seconds',
+        'releaseDate' => 2000
+      ],
+      [
+        'title' => 'The Last of Us',
+        'releaseDate' => 2023
+      ]
+    ];
+
+    function getMoviesByReleasedDate($movies, $releaseDate)
+    {
+      $filteredMovies = [];
+
+      foreach ($movies as $movie) {
+        if ($movie['releaseDate'] === $releaseDate) {
+          $filteredMovies[] = $movie;
         }
-        return $filteredBooks;
       }
+      return $filteredMovies;
+    }
 
-    ?>
-    <h1>Recommended Books</h1>
-    <ul>
-      <?php foreach (filterByAuthor($books, 'Stephen King') as $book): ?>
-        <li>
-          <a href="<?= $book['purchaseUrl'] ?>"><?= "{$book['title']}&trade;" ?></a>(<?= $book['releasedYear'] ?>) by
-          <?= $book['author'] ?>.
-        </li>
-      <?php endforeach; ?>
-    </ul>
+  ?>
+
+ <h1>Recommended Action Movies</h1>
+
+ <ul>
+  <?php foreach (getMoviesByReleasedDate($movies, 2000) as $movie): ?>
+
+      <li><?= $movie['title'] ?> (<?= $movie['releaseDate'] ?>)</li>
+    
+  <?php endforeach ?>
+
+  </ul>
 
   </body>
 
