@@ -9,43 +9,56 @@
 
   <body>
     <?php
+      $books = [
+        [
+          'title' => 'Do Androids Dream of Electric Sheep',
+          'releasedYear' => 1968,
+          'author' => 'Philips K. Dick',
+          'purchaseUrl' => 'www.example1.com',
+        ],
+        [
+          'title' => 'The Langoliers',
+          'releasedYear' => 1990,
+          'author' => 'Stephen King',
+          'purchaseUrl' => 'www.example2.com',
+        ],
+        [
+          'title' => 'Project Hail Mary',
+          'releasedYear' => 2021,
+          'author' => 'Andy Weir',
+          'purchaseUrl' => 'www.example3.com',
+        ],
+        [
+          'title' => 'The Martian',
+          'releasedYear' => 2011,
+          'author' => 'Andy Weir',
+          'purchaseUrl' => 'www.example4.com',
+        ],
+      ];
 
-    $books = [
-      [
-        "title" => "Do Androids Dream of Electric Sheep",
-        "releasedYear" => 1998,
-        "author" => "Joe Joe",
-        "purchaseUrl" => "www.example1.com",
-      ],
+      function filterByAuthor($books, $author)
+      {
+        $filteredBooks = [];
 
-      [
-        "title" => "The Langoliers",
-        "releasedYear" => 2008,
-        "author" => "Mary Jane",
-        "purchaseUrl" => "www.example2.com",
-      ],
+        foreach ($books as $book) {
+          if ($book['author'] === $author) {
+            $filteredBooks[] = $book;
+          }
+        }
+        return $filteredBooks;
+      }
 
-      [
-        "title" => "Hail Mary",
-        "releasedYear" => 2020,
-        "author" => "Peter Parker",
-        "purchaseUrl" => "www.example3.com",
-      ]
-    ]
-
-      ?>
+    ?>
     <h1>Recommended Books</h1>
     <ul>
-      <?php foreach ($books as $book): ?>
+      <?php foreach (filterByAuthor($books, 'Stephen King') as $book): ?>
         <li>
-          <a href="<?= $book["purchaseUrl"] ?>">
-            <?= "{$book["title"]}&trade;" ?>
-          </a>
-          (<?= $book["releasedYear"] ?>)
-          by <?= $book["author"] ?>.
+          <a href="<?= $book['purchaseUrl'] ?>"><?= "{$book['title']}&trade;" ?></a>(<?= $book['releasedYear'] ?>) by
+          <?= $book['author'] ?>.
         </li>
       <?php endforeach; ?>
     </ul>
+
   </body>
 
 </html>

@@ -1,1 +1,1 @@
-This is a repo I am using to practice PHP via Laragon on VSCode
+This is a repo I am using to practice PHP on Linux with HomeBrew
