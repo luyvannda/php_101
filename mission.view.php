@@ -24,8 +24,8 @@
               <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
               <a href="/" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium" aria-current="page">Home</a>
               <a href="/about.php" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">About</a>
-               <a href="/contact.php" class="bg-blue-400 text-white rounded-md px-3 py-2 text-sm font-medium">Contact</a>
-                <a href="/mission.php" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Our Mission</a>
+               <a href="/contact.php" class=" text-gray-300 hover:bg-gray-700 hover:text-white  rounded-md px-3 py-2 text-sm font-medium">Contact</a>
+                <a href="/mission.php" class="bg-blue-400 text-white text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Our Mission</a>
             </div>
           </div>
         </div>
@@ -124,12 +124,12 @@
 
   <header class="bg-white shadow">
     <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
-      <h1 class="text-3xl font-bold tracking-tight text-gray-900">Contact Us</h1>
+      <h1 class="text-3xl font-bold tracking-tight text-gray-900">Our Mission</h1>
     </div>
   </header>
   <main>
     <div class="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
-      <p>You are viewing the contact page</p>
+      <p>This is our mission page</p>
     </div>
   </main>
 </div>
